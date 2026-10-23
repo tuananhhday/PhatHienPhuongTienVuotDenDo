@@ -1,0 +1,25 @@
+{
+  "camera_id": "red2",
+  "source_video": "dataset_videos/red2.mp4",
+  "detector_mode": "classical",
+  "total_lines": 1,
+  "lines": [
+    {
+      "id": "stop_line_1",
+      "name": "Vach 1 (Chon tu dong - Y=670)",
+      "line": [
+        [
+          0,
+          670
+        ],
+        [
+          1079,
+          670
+        ]
+      ],
+      "direction": "BOTTOM_TO_TOP",
+      "confidence": 0.632,
+      "method": "candidate_scoring_selection"
+    }
+  ]
+}

@@ -1,0 +1,554 @@
+{
+  "accessed": "2026-10-23",
+  "sources": {
+    "detect": {
+      "title": "Phát hiện đối tượng — Ultralytics",
+      "url": "https://docs.ultralytics.com/tasks/detect/"
+    },
+    "classify": {
+      "title": "Phân loại ảnh — Ultralytics",
+      "url": "https://docs.ultralytics.com/tasks/classify/"
+    },
+    "cnn": {
+      "title": "Neural Networks — PyTorch Tutorials",
+      "url": "https://docs.pytorch.org/tutorials/beginner/blitz/neural_networks_tutorial.html"
+    },
+    "conv": {
+      "title": "Conv2d — PyTorch",
+      "url": "https://docs.pytorch.org/docs/2.14/generated/torch.nn.Conv2d.html"
+    },
+    "ssd": {
+      "title": "Liu và cộng sự · SSD · ECCV 2016",
+      "url": "https://arxiv.org/abs/1512.02325"
+    },
+    "ssd-api": {
+      "title": "SSD300-VGG16 — Torchvision",
+      "url": "https://docs.pytorch.org/vision/0.12/generated/torchvision.models.detection.ssd300_vgg16.html"
+    },
+    "v8": {
+      "title": "YOLOv8 — tài liệu Ultralytics",
+      "url": "https://docs.ultralytics.com/models/yolov8/"
+    },
+    "v8-config": {
+      "title": "Cấu hình kiến trúc YOLOv8 — mã nguồn chính thức",
+      "url": "https://raw.githubusercontent.com/ultralytics/ultralytics/main/ultralytics/cfg/models/v8/yolov8.yaml"
+    },
+    "v11": {
+      "title": "YOLO11 — tài liệu Ultralytics",
+      "url": "https://docs.ultralytics.com/models/yolo11/"
+    },
+    "v11-config": {
+      "title": "Cấu hình kiến trúc YOLO11 — mã nguồn chính thức",
+      "url": "https://raw.githubusercontent.com/ultralytics/ultralytics/main/ultralytics/cfg/models/11/yolo11.yaml"
+    },
+    "arch": {
+      "title": "Backbone / neck / head — Ultralytics",
+      "url": "https://docs.ultralytics.com/guides/yolo-architecture/"
+    },
+    "mobile": {
+      "title": "Sandler và cộng sự · MobileNetV2 · CVPR 2018",
+      "url": "https://arxiv.org/abs/1801.04381"
+    },
+    "autoware": {
+      "title": "Model card — AutowareFoundation traffic_light_classifier",
+      "url": "https://huggingface.co/AutowareFoundation/traffic_light_classifier"
+    },
+    "byte": {
+      "title": "Zhang và cộng sự · ByteTrack · ECCV 2022",
+      "url": "https://arxiv.org/abs/2110.06864"
+    },
+    "byte-code": {
+      "title": "ByteTrack — mã nguồn của tác giả",
+      "url": "https://github.com/FoundationVision/ByteTrack"
+    },
+    "kalman": {
+      "title": "Kalman filter trong mã nguồn ByteTrack",
+      "url": "https://github.com/FoundationVision/ByteTrack/blob/main/yolox/tracker/kalman_filter.py"
+    },
+    "assignment": {
+      "title": "Linear sum assignment — SciPy",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linear_sum_assignment.html"
+    },
+    "track": {
+      "title": "Tracking — Ultralytics",
+      "url": "https://docs.ultralytics.com/modes/track/"
+    },
+    "hsv": {
+      "title": "HSV và inRange — OpenCV",
+      "url": "https://docs.opencv.org/4.x/da/d97/tutorial_threshold_inRange.html"
+    },
+    "hough": {
+      "title": "Hough Line Transform — OpenCV",
+      "url": "https://docs.opencv.org/4.x/d9/db0/tutorial_hough_lines.html"
+    },
+    "clahe": {
+      "title": "Histogram Equalization và CLAHE — OpenCV",
+      "url": "https://docs.opencv.org/4.x/d5/daf/tutorial_py_histogram_equalization.html"
+    },
+    "threshold": {
+      "title": "Adaptive thresholding — OpenCV",
+      "url": "https://docs.opencv.org/4.x/d7/d4d/tutorial_py_thresholding.html"
+    },
+    "homography": {
+      "title": "Feature Matching + Homography — OpenCV",
+      "url": "https://docs.opencv.org/4.x/d1/de0/tutorial_py_feature_homography.html"
+    },
+    "camera": {
+      "title": "Camera Calibration / Projective Geometry — OpenCV",
+      "url": "https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html"
+    },
+    "coco": {
+      "title": "Lin và cộng sự · Microsoft COCO · ECCV 2014",
+      "url": "https://arxiv.org/abs/1405.0312"
+    },
+    "coco-eval": {
+      "title": "COCO — Detection Evaluation",
+      "url": "https://cocodataset.org/#detection-eval"
+    },
+    "coco-code": {
+      "title": "COCOeval — mã nguồn đánh giá chính thức",
+      "url": "https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocotools/cocoeval.py"
+    },
+    "labels": {
+      "title": "Định dạng nhãn detection — Ultralytics",
+      "url": "https://docs.ultralytics.com/datasets/detect/"
+    },
+    "split": {
+      "title": "Chia dữ liệu, cross-validation — scikit-learn",
+      "url": "https://scikit-learn.org/stable/modules/cross_validation.html"
+    },
+    "leakage": {
+      "title": "Data leakage — scikit-learn",
+      "url": "https://scikit-learn.org/stable/common_pitfalls.html"
+    },
+    "transfer": {
+      "title": "Transfer Learning — PyTorch Tutorials",
+      "url": "https://docs.pytorch.org/tutorials/beginner/transfer_learning_tutorial.html"
+    },
+    "augment": {
+      "title": "Data augmentation — Ultralytics",
+      "url": "https://docs.ultralytics.com/guides/yolo-data-augmentation/"
+    },
+    "loss": {
+      "title": "Detection losses — mã nguồn / tài liệu Ultralytics",
+      "url": "https://docs.ultralytics.com/reference/utils/loss/"
+    },
+    "dfl": {
+      "title": "Li và cộng sự · Generalized Focal Loss · NeurIPS 2020",
+      "url": "https://arxiv.org/abs/2006.04388"
+    },
+    "ciou": {
+      "title": "Zheng và cộng sự · DIoU / CIoU · AAAI 2020",
+      "url": "https://arxiv.org/abs/1911.08287"
+    },
+    "ce": {
+      "title": "CrossEntropyLoss — PyTorch",
+      "url": "https://docs.pytorch.org/docs/2.14/generated/torch.nn.CrossEntropyLoss.html"
+    },
+    "sgd": {
+      "title": "SGD — PyTorch",
+      "url": "https://docs.pytorch.org/docs/2.14/generated/torch.optim.SGD.html"
+    },
+    "adam": {
+      "title": "AdamW — PyTorch",
+      "url": "https://docs.pytorch.org/docs/2.14/generated/torch.optim.AdamW.html"
+    },
+    "nms": {
+      "title": "Non-maximum suppression — Torchvision",
+      "url": "https://docs.pytorch.org/vision/stable/generated/torchvision.ops.nms.html"
+    },
+    "metrics": {
+      "title": "Precision / Recall / F1 / confusion matrix — scikit-learn",
+      "url": "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    },
+    "hota": {
+      "title": "Luiten và cộng sự · HOTA · IJCV 2021",
+      "url": "https://arxiv.org/abs/2009.07736"
+    },
+    "benchmark": {
+      "title": "Benchmarking — PyTorch Tutorials",
+      "url": "https://docs.pytorch.org/tutorials/recipes/recipes/benchmark.html"
+    },
+    "cuda": {
+      "title": "CUDA semantics và đồng bộ thời gian — PyTorch",
+      "url": "https://docs.pytorch.org/docs/2.14/notes/cuda.html"
+    },
+    "predict": {
+      "title": "Inference, resize và ngưỡng — Ultralytics",
+      "url": "https://docs.ultralytics.com/modes/predict/"
+    }
+  },
+  "topics": [
+    {
+      "id": "overview",
+      "group": "I · Bài toán & nền tảng",
+      "title": "Tổng quan bài toán",
+      "refs": []
+    },
+    {
+      "id": "tasks",
+      "group": "I · Bài toán & nền tảng",
+      "title": "Classification, detection, tracking",
+      "refs": [
+        "detect",
+        "classify",
+        "track"
+      ]
+    },
+    {
+      "id": "cnn",
+      "group": "I · Bài toán & nền tảng",
+      "title": "CNN và đặc trưng ảnh",
+      "refs": [
+        "cnn",
+        "conv"
+      ]
+    },
+    {
+      "id": "bbox",
+      "group": "I · Bài toán & nền tảng",
+      "title": "Bounding box và tọa độ",
+      "refs": [
+        "labels",
+        "ssd-api"
+      ]
+    },
+    {
+      "id": "iou",
+      "group": "I · Bài toán & nền tảng",
+      "title": "IoU — độ chồng khớp của hai box",
+      "refs": [
+        "coco-eval",
+        "nms"
+      ]
+    },
+    {
+      "id": "nms",
+      "group": "I · Bài toán & nền tảng",
+      "title": "Confidence và NMS",
+      "refs": [
+        "nms",
+        "predict"
+      ]
+    },
+    {
+      "id": "multiscale",
+      "group": "II · Kiến trúc mô hình",
+      "title": "Backbone, neck, head và đa tỉ lệ",
+      "refs": [
+        "arch",
+        "v8-config",
+        "v11-config"
+      ]
+    },
+    {
+      "id": "ssd",
+      "group": "II · Kiến trúc mô hình",
+      "title": "SSD300-VGG16",
+      "refs": [
+        "ssd",
+        "ssd-api"
+      ]
+    },
+    {
+      "id": "yolov8",
+      "group": "II · Kiến trúc mô hình",
+      "title": "YOLOv8s",
+      "refs": [
+        "v8",
+        "v8-config"
+      ]
+    },
+    {
+      "id": "yolo11",
+      "group": "II · Kiến trúc mô hình",
+      "title": "YOLO11x",
+      "refs": [
+        "v11",
+        "v11-config"
+      ]
+    },
+    {
+      "id": "mobilenet",
+      "group": "II · Kiến trúc mô hình",
+      "title": "MobileNetV2",
+      "refs": [
+        "mobile",
+        "autoware"
+      ]
+    },
+    {
+      "id": "autoware",
+      "group": "III · Đèn & theo dõi xe",
+      "title": "Classifier đèn Autoware",
+      "refs": [
+        "autoware"
+      ]
+    },
+    {
+      "id": "hsv",
+      "group": "III · Đèn & theo dõi xe",
+      "title": "HSV và đọc màu đèn",
+      "refs": [
+        "hsv"
+      ]
+    },
+    {
+      "id": "bytetrack",
+      "group": "III · Đèn & theo dõi xe",
+      "title": "ByteTrack",
+      "refs": [
+        "byte",
+        "byte-code",
+        "track"
+      ]
+    },
+    {
+      "id": "kalman",
+      "group": "III · Đèn & theo dõi xe",
+      "title": "Kalman filter",
+      "refs": [
+        "kalman"
+      ]
+    },
+    {
+      "id": "assignment",
+      "group": "III · Đèn & theo dõi xe",
+      "title": "Ghép track với detection",
+      "refs": [
+        "assignment",
+        "byte-code"
+      ]
+    },
+    {
+      "id": "roi",
+      "group": "IV · Hình học & sự kiện",
+      "title": "ROI và hiệu chỉnh camera",
+      "refs": [
+        "camera"
+      ]
+    },
+    {
+      "id": "homography",
+      "group": "IV · Hình học & sự kiện",
+      "title": "Homography, ORB, RANSAC và EMA",
+      "refs": [
+        "homography"
+      ]
+    },
+    {
+      "id": "stopline",
+      "group": "IV · Hình học & sự kiện",
+      "title": "CLAHE, threshold, Canny và Hough",
+      "refs": [
+        "clahe",
+        "threshold",
+        "hough"
+      ]
+    },
+    {
+      "id": "crossing",
+      "group": "IV · Hình học & sự kiện",
+      "title": "Hình học và máy trạng thái cắt vạch",
+      "refs": []
+    },
+    {
+      "id": "temporal-light",
+      "group": "IV · Hình học & sự kiện",
+      "title": "Lọc trạng thái đèn theo thời gian",
+      "refs": []
+    },
+    {
+      "id": "dataset",
+      "group": "V · Dữ liệu & huấn luyện",
+      "title": "COCO và dữ liệu trong dự án",
+      "refs": [
+        "coco"
+      ]
+    },
+    {
+      "id": "split",
+      "group": "V · Dữ liệu & huấn luyện",
+      "title": "Train / validation / test và leakage",
+      "refs": [
+        "split",
+        "leakage"
+      ]
+    },
+    {
+      "id": "annotation",
+      "group": "V · Dữ liệu & huấn luyện",
+      "title": "Gán nhãn và kiểm tra chất lượng",
+      "refs": [
+        "labels"
+      ]
+    },
+    {
+      "id": "preprocessing",
+      "group": "V · Dữ liệu & huấn luyện",
+      "title": "Tiền xử lý và hệ tọa độ",
+      "refs": [
+        "predict",
+        "ssd-api"
+      ]
+    },
+    {
+      "id": "augmentation",
+      "group": "V · Dữ liệu & huấn luyện",
+      "title": "Data augmentation",
+      "refs": [
+        "augment"
+      ]
+    },
+    {
+      "id": "transfer",
+      "group": "V · Dữ liệu & huấn luyện",
+      "title": "Pretrained và fine-tuning",
+      "refs": [
+        "transfer"
+      ]
+    },
+    {
+      "id": "distribution",
+      "group": "V · Dữ liệu & huấn luyện",
+      "title": "Phân bố lớp và mất cân bằng",
+      "refs": [
+        "coco-code"
+      ]
+    },
+    {
+      "id": "training",
+      "group": "V · Dữ liệu & huấn luyện",
+      "title": "Epoch, batch, gradient và checkpoint",
+      "refs": [
+        "cnn",
+        "split"
+      ]
+    },
+    {
+      "id": "optimizers",
+      "group": "V · Dữ liệu & huấn luyện",
+      "title": "SGD, AdamW và learning-rate schedule",
+      "refs": [
+        "sgd",
+        "adam"
+      ]
+    },
+    {
+      "id": "loss",
+      "group": "V · Dữ liệu & huấn luyện",
+      "title": "Hàm loss: phân loại và định vị",
+      "refs": [
+        "ce",
+        "ciou",
+        "dfl",
+        "loss"
+      ]
+    },
+    {
+      "id": "precision",
+      "group": "VI · Đánh giá & kết quả",
+      "title": "TP, FP, FN — Precision, Recall, F1",
+      "refs": [
+        "metrics"
+      ]
+    },
+    {
+      "id": "map",
+      "group": "VI · Đánh giá & kết quả",
+      "title": "PR curve, AP và mAP của COCO",
+      "refs": [
+        "coco-eval",
+        "coco-code"
+      ]
+    },
+    {
+      "id": "confusion",
+      "group": "VI · Đánh giá & kết quả",
+      "title": "Confusion matrix và phân tích lỗi",
+      "refs": [
+        "metrics"
+      ]
+    },
+    {
+      "id": "tracking-metrics",
+      "group": "VI · Đánh giá & kết quả",
+      "title": "Đánh giá tracking: ID switch, IDF1, HOTA",
+      "refs": [
+        "hota",
+        "byte"
+      ]
+    },
+    {
+      "id": "event-eval",
+      "group": "VI · Đánh giá & kết quả",
+      "title": "Đánh giá sự kiện vượt đèn đỏ",
+      "refs": []
+    },
+    {
+      "id": "fps",
+      "group": "VI · Đánh giá & kết quả",
+      "title": "FPS, latency và đo tốc độ",
+      "refs": [
+        "benchmark",
+        "cuda"
+      ]
+    },
+    {
+      "id": "results",
+      "group": "VI · Đánh giá & kết quả",
+      "title": "Kết quả đã lưu của project",
+      "refs": []
+    },
+    {
+      "id": "failure",
+      "group": "VII · Giới hạn & tra cứu",
+      "title": "Sai số và đánh giá toàn hệ thống",
+      "refs": []
+    },
+    {
+      "id": "glossary",
+      "group": "VII · Giới hạn & tra cứu",
+      "title": "Từ điển thuật ngữ và câu hỏi thường gặp",
+      "refs": []
+    },
+    {
+      "id": "sources",
+      "group": "VII · Giới hạn & tra cứu",
+      "title": "Tài liệu gốc và cách đối chiếu",
+      "refs": []
+    }
+  ],
+  "data": {
+    "train": {
+      "images": 1000,
+      "instances": {
+        "bicycle": 324,
+        "car": 2050,
+        "motorcycle": 395,
+        "bus": 288,
+        "truck": 482
+      }
+    },
+    "val": {
+      "images": 200,
+      "instances": {
+        "bicycle": 43,
+        "car": 396,
+        "motorcycle": 94,
+        "bus": 54,
+        "truck": 98
+      }
+    },
+    "test": {
+      "images": 200,
+      "instances": {
+        "bicycle": 79,
+        "car": 440,
+        "motorcycle": 85,
+        "bus": 77,
+        "truck": 81
+      }
+    }
+  }
+}

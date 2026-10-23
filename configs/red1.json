@@ -1,0 +1,42 @@
+{
+  "camera_id": "red1",
+  "source_video": "dataset_videos/red1.mp4",
+  "detector_mode": "classical",
+  "total_lines": 2,
+  "lines": [
+    {
+      "id": "stop_line_1",
+      "name": "Vach 1 (Chon tu dong - Y=681)",
+      "line": [
+        [
+          0,
+          681
+        ],
+        [
+          1079,
+          681
+        ]
+      ],
+      "direction": "BOTTOM_TO_TOP",
+      "confidence": 0.824,
+      "method": "candidate_scoring_selection"
+    },
+    {
+      "id": "stop_line_2",
+      "name": "Vach 2 (Chon tu dong - Y=631)",
+      "line": [
+        [
+          0,
+          631
+        ],
+        [
+          1079,
+          631
+        ]
+      ],
+      "direction": "BOTTOM_TO_TOP",
+      "confidence": 0.76,
+      "method": "candidate_scoring_selection"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": 2,
+  "video_identity": "70d40f36d1dd01f42cf18214ad627be7aabd1a13ac56fb998a96fe60f12412e5",
+  "source_video": "D:\\Code\\nhandienphuongtien\\dataset_videos\\red9.mp4",
+  "frame_size": [
+    1080,
+    1080
+  ],
+  "gates": [
+    {
+      "id": "gate_1",
+      "name": "VACH 1",
+      "line": [
+        [
+          12,
+          717
+        ],
+        [
+          1065,
+          781
+        ]
+      ],
+      "direction": "BOTTOM_TO_TOP",
+      "signal_boxes": [
+        [
+          844,
+          65,
+          919,
+          156
+        ]
+      ],
+      "movement": "straight",
+      "anchor": [
+        0.5,
+        1.0
+      ],
+      "method": "quick_scene_calibrated",
+      "confidence": 1.0
+    }
+  ]
+}

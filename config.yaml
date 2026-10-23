@@ -1,0 +1,64 @@
+# Cấu hình luồng video; notebook huấn luyện dùng cấu hình riêng.
+general:
+  output_dir: violations
+
+runtime:
+  # auto: ưu tiên GPU NVIDIA số 0 khi PyTorch nhận CUDA, nếu không sẽ dùng CPU.
+  device: auto
+
+camera:
+  cache_dir: configs
+  stabilization_enabled: false
+
+models:
+  vehicle_detector:
+    # COCO gốc: kiểm tra trực quan red3 ít bbox sai trên đường trống hơn bản fine-tune.
+    # Bản fine-tune vẫn ở weights/yolo11x.pt; dùng --vehicle-weights để so sánh.
+    weights: weights/coco/yolo11x.pt
+    # Giữ detection thấp điểm cho bước liên kết thứ hai của ByteTrack.
+    conf: 0.10
+    imgsz: 960
+    tracker: bytetrack.yaml
+    track_names: [bicycle, car, motorcycle, bus, truck]
+  traffic_light:
+    weights: weights/yolov8s.pt  # COCO pretrained, class 9 là traffic light
+    conf: 0.25
+    max_missing_frames: 10
+    state_confirm_frames: 3
+    min_color_pixels: 3
+    min_color_ratio: 0.002
+    color_margin: 1.15
+    classifier: autoware
+    classifier_weights: weights/traffic_light_classifier_mobilenetv2_batch_1.onnx
+    classifier_labels: weights/lamp_labels.txt
+    classifier_conf: 0.80
+    # Đèn được chọn riêng cho từng làn trong configs/scenes, không dùng ROI chung.
+
+stopline_detector:
+  classical:
+    sample_frames: 200
+    roi:
+      y_min_ratio: 0.45
+      y_max_ratio: 0.82
+    scoring_weights:
+      angle_perpendicular: 0.30
+      trajectory_intersection: 0.25
+      stopped_cluster_distance: 0.20
+      relative_length: 0.15
+      paint_contrast: 0.10
+    selection:
+      min_confidence_thresh: 0.52
+      top_k_candidates: 5
+      max_lines: 2
+      secondary_distance_thresh: 48
+
+stabilization:
+  method: ORB
+  max_features: 1000
+
+violation_logic:
+  min_violation_frames: 3
+  crossing_margin_px: 2.0
+  max_track_gap_seconds: 0.20
+  allow_right_turn: false
+  right_turn_x_ratio: 0.75

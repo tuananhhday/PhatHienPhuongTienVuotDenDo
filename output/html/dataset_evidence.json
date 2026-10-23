@@ -1,0 +1,38 @@
+{
+  "source": "notebooks/train-traffic-3-models-modal-h100.ipynb",
+  "splits": {
+    "train": {
+      "images": 1000,
+      "instances": {
+        "bicycle": 324,
+        "car": 2050,
+        "motorcycle": 395,
+        "bus": 288,
+        "truck": 482
+      }
+    },
+    "val": {
+      "images": 200,
+      "instances": {
+        "bicycle": 43,
+        "car": 396,
+        "motorcycle": 94,
+        "bus": 54,
+        "truck": 98
+      }
+    },
+    "test": {
+      "images": 200,
+      "instances": {
+        "bicycle": 79,
+        "car": 440,
+        "motorcycle": 85,
+        "bus": 77,
+        "truck": 81
+      }
+    }
+  },
+  "video_files_in_workspace": 13,
+  "stopline_images_present": false,
+  "image_source": "notebook cell 10 and dataset_videos/red1.mp4 at 4 seconds"
+}

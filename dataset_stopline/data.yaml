@@ -1,0 +1,7 @@
+path: D:/Code/nhandienphuongtien/dataset_stopline
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: stop_line
+  1: crosswalk

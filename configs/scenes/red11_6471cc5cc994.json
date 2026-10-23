@@ -1,0 +1,41 @@
+{
+  "schema_version": 2,
+  "video_identity": "6471cc5cc994979253b010d36c20ede97c73c380a1f7a3f827304b12e009a520",
+  "source_video": "F:\\RedLight-Detection\\dataset_videos\\red11.mp4",
+  "frame_size": [
+    720,
+    1560
+  ],
+  "gates": [
+    {
+      "id": "gate_1",
+      "name": "VACH 1",
+      "line": [
+        [
+          648,
+          827
+        ],
+        [
+          6,
+          821
+        ]
+      ],
+      "direction": "TOP_TO_BOTTOM",
+      "signal_boxes": [
+        [
+          359,
+          429,
+          422,
+          488
+        ]
+      ],
+      "movement": "straight",
+      "anchor": [
+        0.5,
+        1.0
+      ],
+      "method": "quick_scene_calibrated",
+      "confidence": 1.0
+    }
+  ]
+}

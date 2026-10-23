@@ -1,0 +1,50 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+.env/
+env/
+
+# IDE & OS files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Temporary debug images & test videos
+*.jpg
+test_*.py
+!tests/test_*.py
+output_*.mp4
+
+# Local datasets and training artifacts
+dataset_stopline/images/
+dataset_stopline/labels/
+runs/
+yolov8n-seg.pt
+research_artifacts/weights/
+weights/*
+!weights/yolov8s.pt
+.test-deps/
+.test-tmp/
+.pytest_cache/
+*.ipynb_checkpoints/
+traffic_results/
+scene_dataset/
+
+# Generated files and local tools
+node_modules/
+tmp/
+violations/
+.chart-data*/
+output/pptx/
+output/pdf/
+*.log
+*.aux
+*.toc
+*.out

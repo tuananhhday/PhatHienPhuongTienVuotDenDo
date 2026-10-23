@@ -1,0 +1,25 @@
+{
+  "camera_id": "cam_red2",
+  "source_video": "dataset_videos\\red4.mp4",
+  "detector_mode": "ai_maskrcnn",
+  "total_lines": 1,
+  "lines": [
+    {
+      "id": "stop_line_1",
+      "name": "Vach 1 (Mask R-CNN - Y=568)",
+      "line": [
+        [
+          0,
+          562
+        ],
+        [
+          1079,
+          574
+        ]
+      ],
+      "direction": "TOP_TO_BOTTOM",
+      "confidence": 0.981,
+      "method": "ai_maskrcnn_segmentation"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "camera_id": "cam_red1",
+  "source_video": "dataset_videos\\red1.mp4",
+  "detector_mode": "manual_confirmed",
+  "total_lines": 1,
+  "lines": [
+    {
+      "id": "stop_line_1",
+      "name": "Vach dung (Xac nhan - Y=680)",
+      "line": [
+        [
+          1066,
+          726
+        ],
+        [
+          9,
+          634
+        ]
+      ],
+      "direction": "BOTTOM_TO_TOP",
+      "confidence": 1.0,
+      "method": "manual_confirmed"
+    }
+  ]
+}
