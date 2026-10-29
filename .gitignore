@@ -36,15 +36,3 @@ weights/*
 *.ipynb_checkpoints/
 traffic_results/
 scene_dataset/
-
-# Generated files and local tools
-node_modules/
-tmp/
-violations/
-.chart-data*/
-output/pptx/
-output/pdf/
-*.log
-*.aux
-*.toc
-*.out

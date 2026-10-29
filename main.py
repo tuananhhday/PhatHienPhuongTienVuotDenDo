@@ -14,7 +14,6 @@ import yaml
 
 from src.camera_stabilizer import CameraStabilizer
 from src.report_generator import ReportGenerator
-from src.stopline_detector import StopLineDetector
 from src.traffic_light_detector import TrafficLightDetector
 from src.violation_engine import ViolationEngine
 from src.scene_config import scene_path, load_scene
@@ -22,6 +21,10 @@ from src.light_classifier import LightClassifier
 
 logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
 logger = logging.getLogger("TrafficSystem")
+
+
+class InferenceDependencyError(RuntimeError):
+    """Inference cannot start because Windows blocked a required library."""
 
 
 def load_yaml_config(config_path: str = "config.yaml") -> dict:
@@ -34,7 +37,18 @@ def load_yaml_config(config_path: str = "config.yaml") -> dict:
 
 def resolve_inference_device(requested: str = "auto"):
     """Chọn GPU NVIDIA khi có CUDA; cho phép ép CPU hoặc một GPU cụ thể."""
-    import torch
+    try:
+        import torch
+    except OSError as exc:
+        if getattr(exc, "winerror", None) != 4551 and "WinError 4551" not in str(exc):
+            raise
+        raise InferenceDependencyError(
+            "Windows App Control đang chặn DLL của PyTorch (WinError 4551). "
+            "Cần quản trị viên kiểm tra nhật ký Microsoft-Windows-CodeIntegrity/Operational "
+            "và cho phép bản PyTorch theo chính sách của máy. --device cpu cũng cần PyTorch. "
+            "Bạn vẫn có thể hiệu chỉnh bằng python calibrate_scene.py --video <video>. "
+            f"Chi tiết: {exc}"
+        ) from exc
 
     value = str(requested or "auto").strip().lower()
     if value == "auto":
@@ -123,10 +137,6 @@ def run_pipeline(
     # clips only when --camera-id is explicitly provided.
     if not camera_id:
         camera_id = Path(str(video_source)).stem or "cam_01"
-    inference_device = resolve_inference_device(
-        device if device is not None else cfg.get("runtime", {}).get("device", "auto")
-    )
-
     # Mở nguồn video
     cap = cv2.VideoCapture(int(video_source) if str(video_source).isdigit() else str(video_source))
     if not cap.isOpened():
@@ -160,6 +170,8 @@ def run_pipeline(
             scene = load_scene(profile_path, video_source, first_frame.shape)
         stop_lines = scene['gates']
     else:
+        from src.stopline_detector import StopLineDetector
+
         logger.warning('EXPERIMENTAL: vạch tự đề xuất chưa được xác nhận, kết quả chỉ dùng chẩn đoán.')
         line_detector = StopLineDetector(config_path="config.yaml")
         stop_lines = line_detector.detect(video_source, camera_id=camera_id,
@@ -169,6 +181,15 @@ def run_pipeline(
         cap.release()
         logger.error(f"[LỖI] Không thể phát hiện hoặc đọc vạch dừng cho video: {video_source}")
         return
+
+    # Calibration and scene validation do not require the inference runtime.
+    try:
+        inference_device = resolve_inference_device(
+            device if device is not None else cfg.get("runtime", {}).get("device", "auto")
+        )
+    except Exception:
+        cap.release()
+        raise
 
     # 2. KHỞI TẠO BỘ CHỐNG RUNG CAMERA
     stabilizer = CameraStabilizer(
@@ -432,18 +453,22 @@ if __name__ == "__main__":
     parser.add_argument('--vehicle-weights', help='Checkpoint xe khác để đối chiếu trên cùng video')
     args = parser.parse_args()
 
-    run_pipeline(
-        video_source=args.video,
-        camera_id=args.camera_id,
-        redetect=args.redetect,
-        max_lines=args.max_lines,
-        output_video=args.output,
-        stabilize=args.stabilize,
-        headless=args.headless,
-        debug=args.debug,
-        device=args.device,
-        scene_config=args.scene_config,
-        calibrate=args.calibrate,
-        experimental_auto=args.experimental_auto and not args.scene_calibrated,
-        vehicle_weights=args.vehicle_weights,
-    )
+    try:
+        run_pipeline(
+            video_source=args.video,
+            camera_id=args.camera_id,
+            redetect=args.redetect,
+            max_lines=args.max_lines,
+            output_video=args.output,
+            stabilize=args.stabilize,
+            headless=args.headless,
+            debug=args.debug,
+            device=args.device,
+            scene_config=args.scene_config,
+            calibrate=args.calibrate,
+            experimental_auto=args.experimental_auto and not args.scene_calibrated,
+            vehicle_weights=args.vehicle_weights,
+        )
+    except InferenceDependencyError as exc:
+        logger.error("%s", exc)
+        raise SystemExit(1)

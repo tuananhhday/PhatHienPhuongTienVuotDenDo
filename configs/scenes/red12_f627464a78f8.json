@@ -12,21 +12,21 @@
       "name": "VACH 1",
       "line": [
         [
-          1177,
-          526
+          299,
+          523
         ],
         [
-          301,
-          516
+          1162,
+          529
         ]
       ],
       "direction": "BOTTOM_TO_TOP",
       "signal_boxes": [
         [
-          782,
-          11,
-          863,
-          94
+          767,
+          14,
+          904,
+          91
         ]
       ],
       "movement": "straight",

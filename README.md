@@ -4,7 +4,7 @@ Dự án đọc video giao thông, phát hiện và theo dõi phương tiện, x
 
 ## Báo cáo HTML
 
-Mở [báo cáo](output/html/bao_cao_de_hieu.html) bằng trình duyệt sau khi clone hoặc tải repository. Báo cáo có năm phần: bài toán và input/output, dataset, pretrained và fine-tune, mô hình và thuật toán, các chỉ số đánh giá. Ảnh, biểu đồ và sơ đồ được nhúng sẵn trong file để đọc ngoại tuyến.
+Mở [báo cáo](output/html/bao_cao_de_hieu.html) bằng trình duyệt sau khi clone hoặc tải repository. Báo cáo có bốn phần: giới thiệu bài toán, dữ liệu và biểu đồ, chia tập và huấn luyện, mô hình và đánh giá kết quả. Ảnh, biểu đồ và sơ đồ được nhúng sẵn trong file để đọc ngoại tuyến.
 
 ## Cài đặt sau khi clone
 
